@@ -97,12 +97,6 @@ You are required to develop a **Personalized Notification System** for an e-comm
    - Implement a **GraphQL API Gateway** to unify all microservices.
    - Ensure no microservices are directly exposed to the client.
 
-### 🎯 Requirements
-- **Asynchronous Communication**: Use queue/streaming for inter-service communication.
-- **GraphQL API**: Acts as a single point of interaction for the client.
-- **Database Management**: Assign services to respective databases.
-- **Queue/Stream-Based State Management**: Services should listen to relevant events and update their local state.
-- **Authentication**: JWT-based authentication in the User Service.
 
 ### 🛠 Development
 #### 🏗 Rebuild Individual Services
@@ -110,10 +104,6 @@ You are required to develop a **Personalized Notification System** for an e-comm
 docker-compose build service-name
 docker-compose up -d service-name
 ```
-#### 📜 Viewing Logs
-```bash
-docker-compose logs -f  # Logs for all services
-docker-compose logs -f service-name  # Logs for a specific service
 ```
 #### 🔍 Monitoring
 - **Prometheus**: [http://localhost:9090](http://localhost:9090)
@@ -134,18 +124,6 @@ docker-compose down -v  # Stop and remove volumes
 
 ## 📌 Testing Scheduler Service
 The scheduler triggers recommendation and promotion notifications **every 10 seconds**, so you will see new notifications frequently.
-
-## 🎯 Bonus Features
-- **Caching**: Implement caching in GraphQL for frequently queried data.
-- **Message Queue Monitoring**: Monitor RabbitMQ/Kafka using Prometheus & Grafana.
-- **Dead Letter Queues**: Handle failed event deliveries.
-- **Unit Tests**: Use Jest/Mocha for testing microservices.
-
-## 📌 Submission Guidelines
-- Provide **detailed README files** for each microservice.
-- **Explain the entire architecture** clearly.
-- Include **Docker configurations** for microservices, GraphQL server, databases, and queues.
-- Submit **Postman collections** or **GraphQL playground queries** for testing.
 
 ## 🚀 Conclusion
 This project aims to provide a **scalable, event-driven, and personalized notification system** for an e-commerce platform. The open-ended nature allows for innovation in design and implementation. Looking forward to seeing how you approach this challenge! 🎉
